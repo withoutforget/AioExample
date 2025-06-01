@@ -1,0 +1,24 @@
+services:
+  bot:
+    build:
+      context: ..
+      dockerfile: infra/Dockerfile
+      target: runner
+    environment:
+      CONFIG_FILE: "/etc/config.toml"
+      BOT_ENV: "docker"
+    configs:
+      - source: bot_config
+        target: /etc/config.toml
+    volumes:
+      - ../src:/app/src:ro
+    networks:
+      - main-network
+  
+configs:
+  bot_config:
+    file: config.toml
+
+networks:
+  main-network:
+    driver: bridge

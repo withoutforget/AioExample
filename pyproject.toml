@@ -1,0 +1,58 @@
+[project]
+name = "aioexample"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "adaptix>=3.0.0b11",
+    "aiogram>=3.20.0.post0",
+    "dishka>=1.6.0",
+    "dynaconf>=3.2.11",
+    "pre-commit>=4.2.0",
+    "ruff>=0.11.12",
+    "structlog>=25.3.0",
+]
+[tool.ruff]
+# match black
+line-length = 120
+target-version = "py312"
+lint.select = [
+    "ALL", # include all the rules, including new ones
+]
+lint.ignore = [
+    #### modules
+    "ANN", # flake8-annotations
+    "COM", # flake8-commas
+    "C90", # mccabe complexity
+    "DJ",  # django
+    "EXE", # flake8-executable
+    "T10", # debugger
+    "TID", # flake8-tidy-imports
+
+    #### specific rules
+    "D100",   # ignore missing docs
+    "D101",
+    "D102",
+    "D103",
+    "D104",
+    "D105",
+    "D106",
+    "D107",
+    "D200",
+    "D203",
+    "D205",
+    "D211",
+    "D212",
+    "D400",
+    "D401",
+    "D415",
+    "E402",   # false positives for local imports
+    "E501",   # line too long
+    "TRY003", # external messages in exceptions are too verbose
+    "TD002",
+    "TD003",
+    "FIX002", # too verbose descriptions of todos
+    "INP001", # disable __init__ as module
+
+]

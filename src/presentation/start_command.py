@@ -10,4 +10,4 @@ router = Router()
 
 @router.message(CommandStart())
 async def command_start(message: Message, usecase: FromDishka[StartCommandUsecase]):
-    await usecase(message)
+    await message.answer(text=await usecase())

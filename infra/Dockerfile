@@ -35,5 +35,5 @@ ENV PATH="/app/.venv/bin:/usr/local/bin:$PATH"\
 
 RUN apt update && apt install -y libmp3lame0  && apt-get clean && rm -rf /var/lib/apt/lists/*
 
-CMD ["python", "-m", "src.main.entry"]
+CMD ["python", "-m", "src.main.setup"]
 
